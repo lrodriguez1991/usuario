@@ -1,12 +1,12 @@
 pipeline {
     agent any
 
-    /*environment {
+    environment {
         IMAGE_NAME = "usuario"
-        SONAR_HOST_URL = "http://sonarqube:9000"
-        SONAR_TOKEN = credentials('sonar-token')
-        DOCKERHUB_CREDENTIALS = credentials('dockerhub')
-    }*/
+        //SONAR_HOST_URL = "http://sonarqube:9000"
+        //SONAR_TOKEN = credentials('sonar-token')
+        //DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+    }
 
     stages {
 
