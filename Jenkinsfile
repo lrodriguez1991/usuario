@@ -1,12 +1,12 @@
 pipeline {
     agent any
 
-    environment {
-        IMAGE_NAME = "persona-crud"
+    /*environment {
+        IMAGE_NAME = "usuario"
         SONAR_HOST_URL = "http://sonarqube:9000"
         SONAR_TOKEN = credentials('sonar-token')
         DOCKERHUB_CREDENTIALS = credentials('dockerhub')
-    }
+    }*/
 
     stages {
 
@@ -41,7 +41,7 @@ pipeline {
             }
         }
 
-        stage('SonarQube') {
+        /*stage('SonarQube') {
             agent {
                 docker {
                     image 'maven:3.9.6-eclipse-temurin-21'
@@ -53,7 +53,7 @@ pipeline {
                 withSonarQubeEnv('SonarQube-Server') {
                     sh """
                         mvn sonar:sonar \
-                          -Dsonar.projectKey=persona-crud \
+                          -Dsonar.projectKey=usuario \
                           -Dsonar.host.url=$SONAR_HOST_URL \
                           -Dsonar.login=$SONAR_TOKEN
                     """
@@ -79,7 +79,7 @@ pipeline {
                     sh "docker push $USER/$IMAGE_NAME:${env.BUILD_NUMBER}"
                 }
             }
-        }
+        }*/
     }
 
     post {
