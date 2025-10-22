@@ -41,7 +41,7 @@ pipeline {
             }
         }
 
-        /*stage('SonarQube') {
+        stage('SonarQube') {
             agent {
                 docker {
                     image 'maven:3.9.6-eclipse-temurin-21'
@@ -50,7 +50,7 @@ pipeline {
             }
             steps {
                 echo "Analizando código con SonarQube..."
-                withSonarQubeEnv('SonarQube-Server') {
+                withSonarQubeEnv('sonarqube') {
                     sh """
                         mvn sonar:sonar \
                           -Dsonar.projectKey=usuario \
@@ -61,7 +61,7 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        /*stage('Build Docker Image') {
             agent any
             steps {
                 echo "Construyendo imagen Docker..."
