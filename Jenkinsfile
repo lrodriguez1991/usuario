@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "usuario"
-        SONAR_HOST_URL = "http://sonarqube:9000"
+        SONAR_HOST_URL = "http://localhost:9000"
         SONAR_TOKEN = credentials('sonar-credentials')
         //DOCKERHUB_CREDENTIALS = credentials('dockerhub')
     }
