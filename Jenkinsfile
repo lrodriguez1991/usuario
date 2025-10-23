@@ -5,7 +5,7 @@ pipeline {
         IMAGE_NAME = "usuario"
         SONAR_HOST_URL = "http://sonarqube:9000"
         SONAR_TOKEN = credentials('sonarqube-credentials')
-        //DOCKERHUB_CREDENTIALS = credentials('dockerhub')
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
     }
 
     stages {
@@ -61,7 +61,7 @@ pipeline {
             }
         }
 
-        /*stage('Build Docker Image') {
+        stage('Build Docker Image') {
             agent any
             steps {
                 echo "Construyendo imagen Docker..."
@@ -79,7 +79,7 @@ pipeline {
                     sh "docker push $USER/$IMAGE_NAME:${env.BUILD_NUMBER}"
                 }
             }
-        }*/
+        }
     }
 
     post {
