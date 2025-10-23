@@ -1,6 +1,6 @@
 # PROYECTO Usuario
 
-Este proyecto esta desarrollado bajo la arquitectura microservicio con Java 21 y empaquetado *.war.
+Este proyecto esta desarrollado bajo la arquitectura microservicio con Java 21 y empaquetado *.jar.
 
 Este proyecto se encuentra cargado en el Github y sincronizado para que se realicé la integración continua a través de Jenkins, test, sonarQube y su publicación en DockerHub.
 
