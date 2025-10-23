@@ -73,7 +73,7 @@ pipeline {
             agent any
             steps {
                 echo "Enviando imagen a DockerHub..."
-                withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
                     sh "echo $PASS | docker login -u $USER --password-stdin"
                     sh "docker tag $IMAGE_NAME:${env.BUILD_NUMBER} $USER/$IMAGE_NAME:${env.BUILD_NUMBER}"
                     sh "docker push $USER/$IMAGE_NAME:${env.BUILD_NUMBER}"
